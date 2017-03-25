@@ -26,18 +26,13 @@ public class Window extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
-        jMenu1 = new javax.swing.JMenu();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         multiplayer = new javax.swing.JButton();
         start = new javax.swing.JButton();
         gamePanel = new GamePanel();
-        ssMode = new javax.swing.JCheckBox();
-        woBot = new javax.swing.JCheckBox();
         optionsAI = new javax.swing.JLabel();
-        basBot = new javax.swing.JCheckBox();
-        milanBot = new javax.swing.JCheckBox();
         mapOptions = new javax.swing.JLabel();
         desert = new javax.swing.JButton();
-        jungle = new javax.swing.JButton();
         city = new javax.swing.JButton();
         boat = new javax.swing.JButton();
         controls = new javax.swing.JLabel();
@@ -49,6 +44,10 @@ public class Window extends javax.swing.JFrame {
         walkRight = new javax.swing.JLabel();
         punch = new javax.swing.JLabel();
         kick = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -61,24 +60,12 @@ public class Window extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("jMenu1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mortal Kombat XV");
 
         multiplayer.setText("multiplayer");
-        multiplayer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                multiplayerActionPerformed(evt);
-            }
-        });
 
         start.setText("Start game");
-        start.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startActionPerformed(evt);
-            }
-        });
 
         gamePanel.setPreferredSize(new java.awt.Dimension(930, 626));
 
@@ -86,57 +73,22 @@ public class Window extends javax.swing.JFrame {
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 930, Short.MAX_VALUE)
+            .addGap(0, 1152, Short.MAX_VALUE)
         );
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 626, Short.MAX_VALUE)
         );
 
-        ssMode.setText("super saiyan mode");
-        ssMode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ssModeActionPerformed(evt);
-            }
-        });
-
-        woBot.setText("wahet op bot");
-        woBot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                woBotActionPerformed(evt);
-            }
-        });
-
         optionsAI.setText("bot opties");
-
-        basBot.setText("bastiaan bot");
-
-        milanBot.setText("milan bot");
 
         mapOptions.setText("map optie");
 
         desert.setText("woestijn");
 
-        jungle.setText("jungle");
-        jungle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jungleActionPerformed(evt);
-            }
-        });
-
         city.setText("stad");
-        city.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cityActionPerformed(evt);
-            }
-        });
 
         boat.setText("boot");
-        boat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boatActionPerformed(evt);
-            }
-        });
 
         controls.setText("controls");
 
@@ -154,6 +106,11 @@ public class Window extends javax.swing.JFrame {
         setWalkLeft.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
         setWalkRight.setText("d");
+        setWalkRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setWalkRightActionPerformed(evt);
+            }
+        });
         setWalkRight.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
         setPunch.setText("  space");
@@ -170,43 +127,26 @@ public class Window extends javax.swing.JFrame {
 
         kick.setText("kick");
 
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("jRadioButton1");
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("jRadioButton2");
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("jRadioButton3");
+
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("jRadioButton4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(gamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(milanBot)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(woBot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ssMode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(basBot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(boat, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jungle, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(desert, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(optionsAI, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(multiplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(controls)
-                                    .addComponent(mapOptions)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 959, Short.MAX_VALUE)
+                        .addContainerGap(1158, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(walkRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -218,7 +158,23 @@ public class Window extends javax.swing.JFrame {
                             .addComponent(setWalkLeft, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(setWalkRight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(setPunch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setKick, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(setKick, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(gamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(boat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(optionsAI, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(multiplayer, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(controls)
+                            .addComponent(mapOptions)
+                            .addComponent(desert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton2)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton4))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -256,61 +212,25 @@ public class Window extends javax.swing.JFrame {
                         .addComponent(mapOptions)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(desert)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jungle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(23, 23, 23)
                         .addComponent(city)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(boat)
                         .addGap(40, 40, 40)
                         .addComponent(optionsAI, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ssMode)
+                        .addComponent(jRadioButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(woBot)
+                        .addComponent(jRadioButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(basBot)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(milanBot)
-                        .addGap(24, 24, 24))))
+                        .addComponent(jRadioButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton4)
+                        .addGap(21, 21, 21))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_startActionPerformed
-
-    private void woBotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_woBotActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_woBotActionPerformed
-
-    private void ssModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ssModeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ssModeActionPerformed
-
-    private void multiplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplayerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_multiplayerActionPerformed
-
-    private void boatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_boatActionPerformed
-
-    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cityActionPerformed
-
-    private void jungleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jungleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jungleActionPerformed
-
-    private void setWalkLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setWalkLeftActionPerformed
-        // TODO add your handling code here:
-        setWalkLeft.setFocusable(true);
-        setWalkLeft.requestFocus();
-    }//GEN-LAST:event_setWalkLeftActionPerformed
     
     //KeyCodes
     final int SPACE = 32;
@@ -320,6 +240,12 @@ public class Window extends javax.swing.JFrame {
     final int CTRL = 17;
     final int ALT = 18;
     
+    private void setWalkLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setWalkLeftActionPerformed
+        // TODO add your handling code here:
+        setWalkLeft.setFocusable(true);
+        setWalkLeft.requestFocus();
+    }//GEN-LAST:event_setWalkLeftActionPerformed
+
     private void setWalkLeftKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_setWalkLeftKeyPressed
         // TODO add your handling code here:
         String keyTyped = Character.toString(evt.getKeyChar());
@@ -342,6 +268,12 @@ public class Window extends javax.swing.JFrame {
         setWalkLeft.setText(keyTyped);
         setWalkLeft.setFocusable(false);
     }//GEN-LAST:event_setWalkLeftKeyPressed
+
+    private void setWalkRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setWalkRightActionPerformed
+        // TODO add your handling code here:
+        setWalkLeft.setFocusable(true);
+        setWalkLeft.requestFocus();
+    }//GEN-LAST:event_setWalkRightActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,18 +313,19 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox basBot;
     private javax.swing.JButton boat;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton city;
     private javax.swing.JLabel controls;
     private javax.swing.JButton desert;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JButton jungle;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JLabel kick;
     private javax.swing.JLabel mapOptions;
-    private javax.swing.JCheckBox milanBot;
     private javax.swing.JButton multiplayer;
     private javax.swing.JLabel optionsAI;
     private javax.swing.JLabel punch;
@@ -400,10 +333,8 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton setPunch;
     private javax.swing.JButton setWalkLeft;
     private javax.swing.JButton setWalkRight;
-    private javax.swing.JCheckBox ssMode;
     private javax.swing.JButton start;
     private javax.swing.JLabel walkLeft;
     private javax.swing.JLabel walkRight;
-    private javax.swing.JCheckBox woBot;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,8 @@
 package oorlogje;
 
-import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 /**
  *
@@ -9,22 +10,31 @@ import java.awt.Graphics;
  */
 public class GamePanel extends javax.swing.JPanel {
     
-    Player p1;
-    Player p2;
-    
+    public Player p1;
+    public Player p2;
+    //Game settings
+    //ControlsS
+    int WALKLEFT = 65;
+    int WALKRIGHT = 68;
+    int PUNCH = 32;
+    int KICK = 13;
+    //Difficulty
+    int difficulty;
+    //Map
+    Image img = Toolkit.getDefaultToolkit().createImage("C:/Users/Bastiaan/OneDrive/Documenten/Game/Oorlogje/Oorlogje/src/oorlogje/stadje.jpg");
     /**
      * Creates new form GamePanel
      */
     public GamePanel() {
         initComponents();
-        p1 = new AIEasy();
-        p2 = new HumanPlayer();
+        p1 = new HumanPlayer();
     }
     
     public void paint(Graphics g) {
         super.paint(g);
+        g.drawImage(img, 0, 0, null);
         p1.drawPlayer(g);
-        p2.drawPlayer(g);
+        //p2.drawPlayer(g);
     }
 
     /**
@@ -43,11 +53,11 @@ public class GamePanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
+            .addGap(0, 930, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
+            .addGap(0, 626, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -17,15 +17,8 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Container class="javax.swing.JMenu" name="jMenu1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenu1"/>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
-    </Container>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -51,48 +44,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="gamePanel" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="milanBot" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="woBot" max="32767" attributes="0"/>
-                                      <Component id="ssMode" max="32767" attributes="0"/>
-                                      <Component id="basBot" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="boat" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="city" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="jungle" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="desert" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="optionsAI" min="-2" pref="72" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="multiplayer" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="start" min="-2" pref="115" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="controls" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="959" max="32767" attributes="0"/>
+                      <EmptySpace pref="1158" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="walkRight" max="32767" attributes="0"/>
@@ -107,6 +61,24 @@
                           <Component id="setWalkRight" alignment="1" max="32767" attributes="0"/>
                           <Component id="setPunch" alignment="1" max="32767" attributes="0"/>
                           <Component id="setKick" alignment="1" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="gamePanel" min="-2" pref="1152" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="boat" alignment="0" max="32767" attributes="0"/>
+                          <Component id="city" alignment="0" max="32767" attributes="0"/>
+                          <Component id="optionsAI" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                          <Component id="multiplayer" pref="115" max="32767" attributes="0"/>
+                          <Component id="start" max="32767" attributes="0"/>
+                          <Component id="controls" min="-2" max="-2" attributes="0"/>
+                          <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
+                          <Component id="desert" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -154,23 +126,21 @@
                       <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="desert" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jungle" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="city" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="boat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="optionsAI" min="-2" pref="22" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ssMode" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="woBot" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="basBot" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="milanBot" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -182,17 +152,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="multiplayer"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiplayerActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="start">
       <Properties>
         <Property name="text" type="java.lang.String" value="Start game"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="gamePanel">
       <Properties>
@@ -208,45 +172,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="930" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1152" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JCheckBox" name="ssMode">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="super saiyan mode"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ssModeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="woBot">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="wahet op bot"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="woBotActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="optionsAI">
       <Properties>
         <Property name="text" type="java.lang.String" value="bot opties"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="basBot">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="bastiaan bot"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="milanBot">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="milan bot"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mapOptions">
@@ -259,29 +197,15 @@
         <Property name="text" type="java.lang.String" value="woestijn"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jungle">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jungle"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jungleActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="city">
       <Properties>
         <Property name="text" type="java.lang.String" value="stad"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cityActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="boat">
       <Properties>
         <Property name="text" type="java.lang.String" value="boot"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boatActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="controls">
       <Properties>
@@ -304,6 +228,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="d"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setWalkRightActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="setWalkRight.getInputMap().put(KeyStroke.getKeyStroke(&quot;SPACE&quot;), &quot;none&quot;);"/>
       </AuxValues>
@@ -342,6 +269,38 @@
     <Component class="javax.swing.JLabel" name="kick">
       <Properties>
         <Property name="text" type="java.lang.String" value="kick"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jRadioButton1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jRadioButton2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jRadioButton3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jRadioButton4"/>
       </Properties>
     </Component>
   </SubComponents>
