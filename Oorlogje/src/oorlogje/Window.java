@@ -33,7 +33,6 @@ public class Window extends javax.swing.JFrame {
         optionsAI = new javax.swing.JLabel();
         mapOptions = new javax.swing.JLabel();
         desert = new javax.swing.JButton();
-        city = new javax.swing.JButton();
         boat = new javax.swing.JButton();
         controls = new javax.swing.JLabel();
         setWalkLeft = new javax.swing.JButton();
@@ -45,9 +44,10 @@ public class Window extends javax.swing.JFrame {
         punch = new javax.swing.JLabel();
         kick = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        city = new javax.swing.JButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -63,7 +63,7 @@ public class Window extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mortal Kombat XV");
 
-        multiplayer.setText("multiplayer");
+        multiplayer.setText("Multiplayer");
 
         start.setText("Start game");
 
@@ -80,17 +80,15 @@ public class Window extends javax.swing.JFrame {
             .addGap(0, 626, Short.MAX_VALUE)
         );
 
-        optionsAI.setText("bot opties");
+        optionsAI.setText("Bot opties");
 
-        mapOptions.setText("map optie");
+        mapOptions.setText("Map opties");
 
-        desert.setText("woestijn");
+        desert.setText("Dessert");
 
-        city.setText("stad");
+        boat.setText("Boot");
 
-        boat.setText("boot");
-
-        controls.setText("controls");
+        controls.setText("Controls");
 
         setWalkLeft.setText("a");
         setWalkLeft.addActionListener(new java.awt.event.ActionListener() {
@@ -119,25 +117,32 @@ public class Window extends javax.swing.JFrame {
         setKick.setText("enter");
         setKick.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
-        walkLeft.setText("walk left");
+        walkLeft.setText("Walk left");
 
-        walkRight.setText("walk right");
+        walkRight.setText("Walk right");
 
-        punch.setText("punch");
+        punch.setText("Punch");
 
-        kick.setText("kick");
+        kick.setText("Kick");
 
         buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("jRadioButton1");
-
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("jRadioButton2");
+        jRadioButton1.setText("Super saiyan bot");
 
         buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("jRadioButton3");
+        jRadioButton3.setText("Bastiaan bot");
 
         buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("jRadioButton4");
+        jRadioButton4.setText("Milan bot ");
+
+        city.setText("City");
+        city.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cityActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Wahet op bot");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,7 +151,7 @@ public class Window extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(1158, Short.MAX_VALUE)
+                        .addContainerGap(1156, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(walkRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,17 +169,23 @@ public class Window extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(boat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(optionsAI, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(multiplayer, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(multiplayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(controls)
-                            .addComponent(mapOptions)
                             .addComponent(desert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
                             .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))))
+                            .addComponent(jRadioButton4)
+                            .addComponent(city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(mapOptions))
+                            .addComponent(jRadioButton2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(controls)
+                                .addGap(28, 28, 28))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(optionsAI, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -210,9 +221,9 @@ public class Window extends javax.swing.JFrame {
                             .addComponent(kick))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(mapOptions)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(11, 11, 11)
                         .addComponent(desert)
-                        .addGap(23, 23, 23)
+                        .addGap(18, 18, 18)
                         .addComponent(city)
                         .addGap(18, 18, 18)
                         .addComponent(boat)
@@ -222,7 +233,7 @@ public class Window extends javax.swing.JFrame {
                         .addComponent(jRadioButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(3, 3, 3)
                         .addComponent(jRadioButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton4)
@@ -274,6 +285,10 @@ public class Window extends javax.swing.JFrame {
         setWalkLeft.setFocusable(true);
         setWalkLeft.requestFocus();
     }//GEN-LAST:event_setWalkRightActionPerformed
+
+    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cityActionPerformed
 
     /**
      * @param args the command line arguments
