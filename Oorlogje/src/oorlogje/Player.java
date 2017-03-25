@@ -1,5 +1,7 @@
 package oorlogje;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Bastiaan
@@ -19,7 +21,7 @@ public abstract class Player {
         
     }
     
-    abstract void drawPlayer();
+    abstract void drawPlayer(Graphics g);
     abstract void ability();
     
 }

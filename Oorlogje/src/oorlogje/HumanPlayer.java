@@ -6,9 +6,9 @@ import java.awt.Graphics;
  *
  * @author Bastiaan
  */
-public class AIEasy extends Player {
+public class HumanPlayer extends Player {
     
-    public AIEasy() {
+    public HumanPlayer() {
         
     }
     
