@@ -46,7 +46,7 @@
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="1158" max="32767" attributes="0"/>
+                      <EmptySpace pref="1156" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="walkRight" max="32767" attributes="0"/>
@@ -68,17 +68,26 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="boat" alignment="0" max="32767" attributes="0"/>
-                          <Component id="city" alignment="0" max="32767" attributes="0"/>
-                          <Component id="optionsAI" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="multiplayer" pref="115" max="32767" attributes="0"/>
+                          <Component id="multiplayer" max="32767" attributes="0"/>
                           <Component id="start" max="32767" attributes="0"/>
-                          <Component id="controls" min="-2" max="-2" attributes="0"/>
-                          <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
                           <Component id="desert" alignment="0" max="32767" attributes="0"/>
                           <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                           <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                           <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="city" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="controls" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="optionsAI" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -124,11 +133,11 @@
                       </Group>
                       <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="desert" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="city" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="city" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="boat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="optionsAI" min="-2" pref="22" max="-2" attributes="0"/>
@@ -136,7 +145,7 @@
                       <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
@@ -150,7 +159,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="multiplayer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="multiplayer"/>
+        <Property name="text" type="java.lang.String" value="Multiplayer"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="start">
@@ -184,32 +193,27 @@
     </Container>
     <Component class="javax.swing.JLabel" name="optionsAI">
       <Properties>
-        <Property name="text" type="java.lang.String" value="bot opties"/>
+        <Property name="text" type="java.lang.String" value="Bot opties"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mapOptions">
       <Properties>
-        <Property name="text" type="java.lang.String" value="map optie"/>
+        <Property name="text" type="java.lang.String" value="Map opties"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="desert">
       <Properties>
-        <Property name="text" type="java.lang.String" value="woestijn"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="city">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="stad"/>
+        <Property name="text" type="java.lang.String" value="Dessert"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="boat">
       <Properties>
-        <Property name="text" type="java.lang.String" value="boot"/>
+        <Property name="text" type="java.lang.String" value="Boot"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="controls">
       <Properties>
-        <Property name="text" type="java.lang.String" value="controls"/>
+        <Property name="text" type="java.lang.String" value="Controls"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="setWalkLeft">
@@ -262,22 +266,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="walkLeft">
       <Properties>
-        <Property name="text" type="java.lang.String" value="walk left"/>
+        <Property name="text" type="java.lang.String" value="Walk left"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="walkRight">
       <Properties>
-        <Property name="text" type="java.lang.String" value="walk right"/>
+        <Property name="text" type="java.lang.String" value="Walk right"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="punch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="punch"/>
+        <Property name="text" type="java.lang.String" value="Punch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="kick">
       <Properties>
-        <Property name="text" type="java.lang.String" value="kick"/>
+        <Property name="text" type="java.lang.String" value="Kick"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton1">
@@ -285,15 +289,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jRadioButton1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jRadioButton2"/>
+        <Property name="text" type="java.lang.String" value="Super saiyan bot"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton3">
@@ -301,7 +297,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jRadioButton3"/>
+        <Property name="text" type="java.lang.String" value="Bastiaan bot"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton4">
@@ -309,7 +305,23 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jRadioButton4"/>
+        <Property name="text" type="java.lang.String" value="Milan bot "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="city">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="City"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cityActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Wahet op bot"/>
       </Properties>
     </Component>
   </SubComponents>
