@@ -9,12 +9,15 @@ import javax.swing.KeyStroke;
  * @author Bastiaan
  */
 public class Window extends javax.swing.JFrame {
+    
+    GamePanel game;
 
     /**
      * Creates new form Window
      */
     public Window() {
         initComponents();
+        game = new GamePanel();
     }
 
     /**
@@ -67,6 +70,11 @@ public class Window extends javax.swing.JFrame {
         multiplayer.setText("Multiplayer");
 
         start.setText("Start game");
+        start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startActionPerformed(evt);
+            }
+        });
 
         gamePanel.setPreferredSize(new java.awt.Dimension(930, 626));
 
@@ -85,9 +93,19 @@ public class Window extends javax.swing.JFrame {
 
         mapOptions.setText("Map opties");
 
-        desert.setText("Dessert");
+        desert.setText("Desert");
+        desert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desertActionPerformed(evt);
+            }
+        });
 
         boat.setText("Boot");
+        boat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boatActionPerformed(evt);
+            }
+        });
 
         controls.setText("Controls");
 
@@ -308,6 +326,31 @@ public class Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         setKeybinding(setKick, evt);
     }//GEN-LAST:event_setKickKeyPressed
+
+    private void desertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desertActionPerformed
+        // TODO add your handling code here:
+        game.setMap(desert.getText());
+    }//GEN-LAST:event_desertActionPerformed
+
+    private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
+        // TODO add your handling code here:
+        getContentPane().remove(gamePanel);
+        gamePanel = game;
+        gamePanel.setSize(900, 500);
+        getContentPane().add(gamePanel);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_startActionPerformed
+
+    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
+        // TODO add your handling code here:
+        game.setMap(city.getText());
+    }//GEN-LAST:event_cityActionPerformed
+
+    private void boatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boatActionPerformed
+        // TODO add your handling code here:
+        game.setMap(boat.getText());
+    }//GEN-LAST:event_boatActionPerformed
     
     /**
      * 
@@ -362,10 +405,6 @@ public class Window extends javax.swing.JFrame {
         JButton[] buttonList = new javax.swing.JButton[] {setWalkLeft, setWalkRight, setPunch, setKick};
     }
 
-    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cityActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -398,7 +437,6 @@ public class Window extends javax.swing.JFrame {
             public void run() {
                 Window window = new Window();
                 window.setVisible(true);
-                window.gamePanel.repaint();
             }
         });
     }

@@ -21,7 +21,7 @@ public class GamePanel extends javax.swing.JPanel {
     //Difficulty
     int difficulty;
     //Map
-    Image img = Toolkit.getDefaultToolkit().createImage("C:/Users/Bastiaan/OneDrive/Documenten/Game/Oorlogje/Oorlogje/src/oorlogje/stadje.jpg");
+    Image img = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Bastiaan\\OneDrive\\Documenten\\Game\\Oorlogje\\Oorlogje\\zandmapje.jpg");
     /**
      * Creates new form GamePanel
      */
@@ -35,6 +35,26 @@ public class GamePanel extends javax.swing.JPanel {
         g.drawImage(img, 0, 0, null);
         p1.drawPlayer(g);
         //p2.drawPlayer(g);
+    }
+    
+    /**
+     *
+     * @param map
+     */
+    public void setMap(String map) {
+        try {
+            switch(map) {
+                case "City": img = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Bastiaan\\OneDrive\\Documenten\\Game\\Oorlogje\\Oorlogje\\stadje.jpg");
+                    break;
+                case "Boat": img = Toolkit.getDefaultToolkit().createImage("/boodt.jpg");
+                    break;
+                case "Desert": img = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Bastiaan\\OneDrive\\Documenten\\Game\\Oorlogje\\Oorlogje\\stadje.jpg");
+                System.out.println(map);
+                    break;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     /**

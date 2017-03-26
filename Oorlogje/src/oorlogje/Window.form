@@ -166,6 +166,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Start game"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="gamePanel">
       <Properties>
@@ -174,7 +177,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new GamePanel()"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new GamePanel();"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Window_gamePanel"/>
       </AuxValues>
 
@@ -203,13 +206,19 @@
     </Component>
     <Component class="javax.swing.JButton" name="desert">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dessert"/>
+        <Property name="text" type="java.lang.String" value="Desert"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="desertActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="boat">
       <Properties>
         <Property name="text" type="java.lang.String" value="Boot"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boatActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="controls">
       <Properties>
