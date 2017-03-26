@@ -1,6 +1,7 @@
 package oorlogje;
 
 import java.awt.event.KeyEvent;
+import javax.swing.JButton;
 import javax.swing.KeyStroke;
 
 /**
@@ -111,12 +112,37 @@ public class Window extends javax.swing.JFrame {
                 setWalkRightActionPerformed(evt);
             }
         });
+        setWalkRight.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                setWalkRightKeyPressed(evt);
+            }
+        });
         setWalkRight.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
         setPunch.setText("  space");
+        setPunch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setPunchActionPerformed(evt);
+            }
+        });
+        setPunch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                setPunchKeyPressed(evt);
+            }
+        });
         setPunch.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
         setKick.setText("enter");
+        setKick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setKickActionPerformed(evt);
+            }
+        });
+        setKick.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                setKickKeyPressed(evt);
+            }
+        });
         setKick.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
         walkLeft.setText("walk left");
@@ -232,24 +258,71 @@ public class Window extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    //KeyCodes
-    final int SPACE = 32;
-    final int TAB = 9;
-    final int ENTER = 13;
-    final int SHIFT = 16;
-    final int CTRL = 17;
-    final int ALT = 18;
-    
     private void setWalkLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setWalkLeftActionPerformed
         // TODO add your handling code here:
-        setWalkLeft.setFocusable(true);
-        setWalkLeft.requestFocus();
+        setFocus(setWalkLeft);
     }//GEN-LAST:event_setWalkLeftActionPerformed
 
     private void setWalkLeftKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_setWalkLeftKeyPressed
         // TODO add your handling code here:
+        setKeybinding(setWalkLeft, evt);
+    }//GEN-LAST:event_setWalkLeftKeyPressed
+
+    private void setWalkRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setWalkRightActionPerformed
+        // TODO add your handling code here:
+        setFocus(setWalkRight);
+    }//GEN-LAST:event_setWalkRightActionPerformed
+
+    private void setWalkRightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_setWalkRightKeyPressed
+        // TODO add your handling code here:
+        setKeybinding(setWalkRight, evt);
+    }//GEN-LAST:event_setWalkRightKeyPressed
+
+    private void setPunchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setPunchActionPerformed
+        // TODO add your handling code here:
+        setFocus(setPunch);
+    }//GEN-LAST:event_setPunchActionPerformed
+
+    private void setPunchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_setPunchKeyPressed
+        // TODO add your handling code here:
+        setKeybinding(setPunch, evt);
+    }//GEN-LAST:event_setPunchKeyPressed
+
+    private void setKickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setKickActionPerformed
+        // TODO add your handling code here:
+        setFocus(setKick);
+    }//GEN-LAST:event_setKickActionPerformed
+
+    private void setKickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_setKickKeyPressed
+        // TODO add your handling code here:
+        setKeybinding(setKick, evt);
+    }//GEN-LAST:event_setKickKeyPressed
+    
+    /**
+     * 
+     * @param button 
+     */
+    void setFocus(javax.swing.JButton button) {
+        button.setFocusable(true);
+        button.requestFocus();
+    }
+    
+    /**
+     * 
+     * @param button
+     * @param evt 
+     */
+    void setKeybinding(javax.swing.JButton button, java.awt.event.KeyEvent evt) {
+        //KeyCodes
+        final int SPACE = 32;
+        final int TAB = 9;
+        final int ENTER = 10;
+        final int SHIFT = 16;
+        final int CTRL = 17;
+        final int ALT = 18;
+        System.out.println(evt.getKeyCode());
         String keyTyped = Character.toString(evt.getKeyChar());
-        if(KeyEvent.CHAR_UNDEFINED == evt.getKeyChar() || SPACE == evt.getKeyCode()) {
+        if(KeyEvent.CHAR_UNDEFINED == evt.getKeyChar() || SPACE == evt.getKeyCode() || ENTER == evt.getKeyCode()) {
             switch(evt.getKeyCode()) {
                 case SPACE: keyTyped = "SPACE";
                     break;
@@ -265,16 +338,19 @@ public class Window extends javax.swing.JFrame {
                     break;
             }
         }
-        setWalkLeft.setText(keyTyped);
-        setWalkLeft.setFocusable(false);
-    }//GEN-LAST:event_setWalkLeftKeyPressed
-
-    private void setWalkRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setWalkRightActionPerformed
-        // TODO add your handling code here:
-        setWalkLeft.setFocusable(true);
-        setWalkLeft.requestFocus();
-    }//GEN-LAST:event_setWalkRightActionPerformed
-
+        button.setText(keyTyped);
+        button.setFocusable(false);
+    }
+    
+    /**
+     * 
+     * @param button
+     * @param evt 
+     */
+    void checkKeybindings(javax.swing.JButton button, java.awt.event.KeyEvent evt) {
+        JButton[] buttonList = new javax.swing.JButton[] {setWalkLeft, setWalkRight, setPunch, setKick};
+    }
+    
     /**
      * @param args the command line arguments
      */
