@@ -1,8 +1,10 @@
-package oorlogje;
+package windows;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.KeyStroke;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -10,15 +12,17 @@ import javax.swing.KeyStroke;
  */
 public class Window extends javax.swing.JFrame {
     
-    GamePanel game;
+    GamePanel game = new GamePanel();
+    Thread thread = new Thread(game);
 
     /**
      * Creates new form Window
      */
     public Window() {
         initComponents();
-        game = new GamePanel();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,7 +37,7 @@ public class Window extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         multiplayer = new javax.swing.JButton();
         start = new javax.swing.JButton();
-        gamePanel = new GamePanel();
+        gamePanel = game;
         optionsAI = new javax.swing.JLabel();
         mapOptions = new javax.swing.JLabel();
         desert = new javax.swing.JButton();
@@ -334,12 +338,7 @@ public class Window extends javax.swing.JFrame {
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         // TODO add your handling code here:
-        getContentPane().remove(gamePanel);
-        gamePanel = game;
-        gamePanel.setSize(900, 500);
-        getContentPane().add(gamePanel);
-        revalidate();
-        repaint();
+        thread.start();
     }//GEN-LAST:event_startActionPerformed
 
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed

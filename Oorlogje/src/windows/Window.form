@@ -177,7 +177,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new GamePanel();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="game;"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Window_gamePanel"/>
       </AuxValues>
 

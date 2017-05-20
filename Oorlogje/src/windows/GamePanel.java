@@ -1,5 +1,7 @@
-package oorlogje;
+package windows;
 
+import players.HumanPlayer;
+import players.Player;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -8,7 +10,7 @@ import java.awt.Toolkit;
  *
  * @author Bastiaan
  */
-public class GamePanel extends javax.swing.JPanel {
+public class GamePanel extends javax.swing.JPanel implements Runnable {
     
     public Player p1;
     public Player p2;
@@ -21,7 +23,7 @@ public class GamePanel extends javax.swing.JPanel {
     //Difficulty
     int difficulty;
     //Map
-    Image img = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Bastiaan\\OneDrive\\Documenten\\Game\\Oorlogje\\Oorlogje\\zandmapje.jpg");
+    Image img = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
     /**
      * Creates new form GamePanel
      */
@@ -30,8 +32,9 @@ public class GamePanel extends javax.swing.JPanel {
         p1 = new HumanPlayer();
     }
     
+    @Override
     public void paint(Graphics g) {
-        super.paint(g);
+//        super.paint(g);
         g.drawImage(img, 0, 0, null);
         p1.drawPlayer(g);
         //p2.drawPlayer(g);
@@ -44,14 +47,14 @@ public class GamePanel extends javax.swing.JPanel {
     public void setMap(String map) {
         try {
             switch(map) {
-                case "City": img = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Bastiaan\\OneDrive\\Documenten\\Game\\Oorlogje\\Oorlogje\\stadje.jpg");
+                case "City": img = Toolkit.getDefaultToolkit().createImage(".\\stadje.jpg");
                     break;
-                case "Boat": img = Toolkit.getDefaultToolkit().createImage("/boodt.jpg");
+                case "Boat": img = Toolkit.getDefaultToolkit().createImage(".\\boodt.jpg");
                     break;
-                case "Desert": img = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Bastiaan\\OneDrive\\Documenten\\Game\\Oorlogje\\Oorlogje\\stadje.jpg");
-                System.out.println(map);
+                case "Desert": img = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
                     break;
             }
+            System.out.println(map);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -66,7 +69,7 @@ public class GamePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(102, 255, 153));
+        setBackground(new java.awt.Color(102, 255, 200));
         setPreferredSize(new java.awt.Dimension(930, 626));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -80,6 +83,14 @@ public class GamePanel extends javax.swing.JPanel {
             .addGap(0, 626, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    @Override
+    public void run() {
+        System.out.println("run");
+        while(true) {
+            this.repaint();
+        }
+    }
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,4 +1,4 @@
-package oorlogje;
+package players;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -19,12 +19,12 @@ public class MilanBot extends Player {
     }
     
     @Override
-    void drawPlayer(Graphics g) {
+    public void drawPlayer(Graphics g) {
         g.drawImage(art, posX, posY, null);
     }
 
     @Override
-    void ability() {
+    public void ability() {
     }
     
     public void updatePos(int dx, int dy) {
@@ -38,5 +38,10 @@ public class MilanBot extends Player {
     
     int getPosY() {
         return posY;
+    }
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
