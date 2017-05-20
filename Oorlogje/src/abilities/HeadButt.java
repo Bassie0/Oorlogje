@@ -7,19 +7,18 @@ package abilities;
 
 /**
  *
- * @author meviu
+ * @author Milan
  */
-public class Punch extends Ability {
-
-    public Punch() {
-        DAMAGE = 6 ; 
-        COOLDOWN = 0.2f; 
+public class HeadButt extends Ability {
+   
+    public HeadButt() {
+        DAMAGE = 20;
+        COOLDOWN = 3f;
         KNOCKBACK = 0;
-    } 
-    
+    }
+
     @Override
     public void drawAbility() {
         
     }
-    
 }
