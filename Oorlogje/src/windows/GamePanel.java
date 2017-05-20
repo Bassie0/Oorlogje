@@ -1,19 +1,21 @@
 package windows;
 
-import players.HumanPlayer;
-import players.Player;
+import players.*;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import settings.*;
 
 /**
  *
  * @author Bastiaan
  */
-public class GamePanel extends javax.swing.JPanel implements Runnable {
+public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSettings, KeyListener {
     
-    public Player p1;
-    public Player p2;
+    Player p1;
+    Player p2;
     //Game settings
     //ControlsS
     int WALKLEFT = 65;
@@ -23,7 +25,7 @@ public class GamePanel extends javax.swing.JPanel implements Runnable {
     //Difficulty
     int difficulty;
     //Map
-    Image img = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
+    Image map = MAP;
     /**
      * Creates new form GamePanel
      */
@@ -35,7 +37,7 @@ public class GamePanel extends javax.swing.JPanel implements Runnable {
     @Override
     public void paint(Graphics g) {
 //        super.paint(g);
-        g.drawImage(img, 0, 0, null);
+        g.drawImage(map, 0, 0, null);
         p1.drawPlayer(g);
         //p2.drawPlayer(g);
     }
@@ -47,11 +49,11 @@ public class GamePanel extends javax.swing.JPanel implements Runnable {
     public void setMap(String map) {
         try {
             switch(map) {
-                case "City": img = Toolkit.getDefaultToolkit().createImage(".\\stadje.jpg");
+                case "City": this.map = Toolkit.getDefaultToolkit().createImage(".\\stadje.jpg");
                     break;
-                case "Boat": img = Toolkit.getDefaultToolkit().createImage(".\\boodt.jpg");
+                case "Boat": this.map = Toolkit.getDefaultToolkit().createImage(".\\boodt.jpg");
                     break;
-                case "Desert": img = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
+                case "Desert": this.map = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
                     break;
             }
             System.out.println(map);
@@ -90,6 +92,21 @@ public class GamePanel extends javax.swing.JPanel implements Runnable {
         while(true) {
             this.repaint();
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

@@ -3,17 +3,18 @@ package windows;
 import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.KeyStroke;
-import javax.swing.*;
-import java.awt.*;
+import settings.DefaultSettings;
+import settings.Settings;
 
 /**
  *
  * @author Bastiaan
  */
-public class Window extends javax.swing.JFrame {
+public class Window extends javax.swing.JFrame implements DefaultSettings {
     
     GamePanel game = new GamePanel();
     Thread thread = new Thread(game);
+    public static Settings settings = new Settings();
 
     /**
      * Creates new form Window
@@ -373,6 +374,10 @@ public class Window extends javax.swing.JFrame {
         final int SHIFT = 16;
         final int CTRL = 17;
         final int ALT = 18;
+        javax.swing.JButton buttonLeft = setWalkLeft;
+        javax.swing.JButton buttonRight = setWalkRight;
+        javax.swing.JButton buttonKick = setKick;
+        javax.swing.JButton buttonPunch = setPunch;
         System.out.println(evt.getKeyCode());
         String keyTyped = Character.toString(evt.getKeyChar());
         if(KeyEvent.CHAR_UNDEFINED == evt.getKeyChar() || SPACE == evt.getKeyCode() || ENTER == evt.getKeyCode()) {
@@ -390,6 +395,15 @@ public class Window extends javax.swing.JFrame {
                 case ALT: keyTyped = "ALT";
                     break;
             }
+        }
+        if(buttonLeft.equals(button)) {
+            settings.setKeyCodeLeft(new char[]{LEFTBUTTONNUMBER, evt.getKeyChar()});
+        } else if(buttonRight.equals(button)) {
+            settings.setKeyCodeRight(new char[]{RIGHTBUTTONNUMBER, evt.getKeyChar()});
+        } else if(buttonKick.equals(button)) {
+            settings.setKeyCodeKick(new char[]{KICKBUTTONNUMBER, evt.getKeyChar()});
+        } else if(buttonPunch.equals(button)) {
+            settings.setKeyCodePunch(new char[]{PUNCHBUTTONNUMBER, evt.getKeyChar()});
         }
         button.setText(keyTyped);
         button.setFocusable(false);

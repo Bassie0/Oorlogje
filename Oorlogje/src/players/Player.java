@@ -2,41 +2,49 @@ package players;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Toolkit;
+import settings.DefaultSettings;
+import static windows.Window.settings;
 
 /**
  *
  * @author Bastiaan
  */
-public abstract class Player {
+public abstract class Player implements DefaultSettings {
     
-    private int height = 100;
-    private int width = 30;
+    int SPEED = 5;
+    int HEIGHT = 100;
+    int WIDTH = 30;
+    int xPos = 0;
+    int yPos = 0;
     
-    Image playerSprite = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
+    Image playerSprite;
     
     public Player () {
-        
+        playerSprite = PLAYERSPRITE;
     }
     
-    public void Move() {
-        
+    public void move(java.awt.event.KeyEvent evt) {
+        if(evt.getKeyChar() == settings.getKeyCodeLeft()[1]) {
+            xPos -= 5;
+        } else if(evt.getKeyChar() == settings.getKeyCodeRight()[1]) {
+            yPos += 5;
+        }
     }
 
     public int getWidth() {
-        return width;
+        return WIDTH;
     }
 
     public int getHeight() {
-        return height;
+        return HEIGHT;
     }
 
     public void setWidth(int width) {
-        this.width = width;
+        this.WIDTH = width;
     }
 
     public void setHeight(int height) {
-        this.height = height;
+        this.HEIGHT = height;
     }
     
     public abstract void drawPlayer(Graphics g);
