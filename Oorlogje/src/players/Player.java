@@ -17,7 +17,11 @@ public abstract class Player implements DefaultSettings {
     int xPos = 0;
     int yPos = 0;
     
+<<<<<<< HEAD
     Image playerSprite;
+=======
+    Image playerSprite = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
+>>>>>>> ec47117e8ddb0167cd6539d0bc6565beb3e6eb82
     
     public Player () {
         playerSprite = PLAYERSPRITE;
