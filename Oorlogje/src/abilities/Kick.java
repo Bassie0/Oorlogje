@@ -7,19 +7,19 @@ package abilities;
 
 /**
  *
- * @author meviu
+ * @author Milan
  */
-public class Punch extends Ability {
+public class Kick extends Ability{
 
-    public Punch() {
-        DAMAGE = 6 ; 
-        COOLDOWN = 0.2f; 
+    public Kick() {
+        DAMAGE = 10;
+        COOLDOWN = 0.6f; 
         KNOCKBACK = 0;
-    } 
-    
+    }
+
     @Override
     public void drawAbility() {
-        
+       
     }
     
 }
