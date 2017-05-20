@@ -13,7 +13,7 @@ public abstract class Player {
     private int height = 100;
     private int width = 30;
     
-    Image playerSprite = Toolkit.getDefaultToolkit().createImage(".\\poppetje.jpg");
+    Image playerSprite = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
     
     public Player () {
         
