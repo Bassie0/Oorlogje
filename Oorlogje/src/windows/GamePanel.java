@@ -6,16 +6,19 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import settings.*;
+import static windows.Window.settings;
 
 /**
  *
  * @author Bastiaan
  */
-public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSettings, KeyListener {
+public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSettings, KeyListener, MouseListener, PlayerSettings {
     
-    Player p1;
-    Player p2;
+    ArrayList<Player> players = new ArrayList<>();
     //Game settings
     //ControlsS
     int WALKLEFT = 65;
@@ -31,15 +34,16 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
      */
     public GamePanel() {
         initComponents();
-        p1 = new HumanPlayer();
+        players.add(new MilanBot());
     }
     
     @Override
     public void paint(Graphics g) {
-//        super.paint(g);
+        super.paint(g);
         g.drawImage(map, 0, 0, null);
-        p1.drawPlayer(g);
-        //p2.drawPlayer(g);
+        for(Player p : players) {
+            p.drawPlayer(g);
+        }
     }
     
     /**
@@ -72,7 +76,7 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
     private void initComponents() {
 
         setBackground(new java.awt.Color(102, 255, 200));
-        setPreferredSize(new java.awt.Dimension(930, 626));
+        setPreferredSize(new java.awt.Dimension(1152, 648));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -89,24 +93,69 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
     @Override
     public void run() {
         System.out.println("run");
+        long previousUpdate = System.currentTimeMillis();
         while(true) {
+            if(System.currentTimeMillis() - previousUpdate >= UPDATEINTERVAL) {
+                update();
+                previousUpdate = System.currentTimeMillis();
+            }
             this.repaint();
         }
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(players.get(0).getxPos());
+        if (e.getKeyChar() == settings.getKeyCodeLeft()) {
+            players.get(0).setDx(players.get(0).getSPEED());
+        } else if (e.getKeyChar() == settings.getKeyCodeRight()) {
+            players.get(0).setDx(-players.get(0).getSPEED());
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getKeyChar() == settings.getKeyCodeLeft()) {
+            players.get(0).setDx(ZERO);
+        } else if (e.getKeyChar() == settings.getKeyCodeRight()) {
+            players.get(0).setDx(ZERO);
+        }
+    }
+
+    private void update() {
+        for(Player p : players) {
+            p.updatePos();
+        }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        this.requestFocus();
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        this.requestFocus();
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
     }
 
     

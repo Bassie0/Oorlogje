@@ -11,47 +11,41 @@ package settings;
  */
 public class Settings implements DefaultSettings{
 
-    private char[] keyCodeKick;
-    private char[] keyCodePunch;
-    private char[] keyCodeLeft;
-    private char[] keyCodeRight;
+    private char[] keyCodes = new char[4];
     
     public Settings() {
-        keyCodePunch = KEYCODEPUNCH;
-        keyCodeLeft = KEYCODELEFT;
-        keyCodeRight = KEYCODERIGHT;
-        keyCodeKick = KEYCODEKICK;
+        keyCodes = KEYCODES;
     }
 
-    public char[] getKeyCodePunch() {
-        return keyCodePunch;
+    public char getKeyCodePunch() {
+        return keyCodes[PUNCHBUTTONNUMBER];
     }
 
-    public char[] getKeyCodeLeft() {
-        return keyCodeLeft;
+    public char getKeyCodeLeft() {
+        return keyCodes[LEFTBUTTONNUMBER];
     }
 
-    public char[] getKeyCodeRight() {
-        return keyCodeRight;
+    public char getKeyCodeRight() {
+        return keyCodes[RIGHTBUTTONNUMBER];
     }
 
-    public char[] getKeyCodeKick() {
-        return keyCodeKick;
+    public char getKeyCodeKick() {
+        return keyCodes[KICKBUTTONNUMBER];
     }
 
-    public void setKeyCodePunch(char[] keyCodePunch) {
-        this.keyCodePunch = keyCodePunch;
+    public void setKeyCodePunch(char keyCodePunch) {
+        this.keyCodes[PUNCHBUTTONNUMBER] = Character.toLowerCase(keyCodePunch);
     }
 
-    public void setKeyCodeLeft(char[] keyCodeLeft) {
-        this.keyCodeLeft = keyCodeLeft;
+    public void setKeyCodeLeft(char keyCodeLeft) {
+        this.keyCodes[LEFTBUTTONNUMBER] = Character.toLowerCase(keyCodeLeft);
     }
 
-    public void setKeyCodeRight(char[] keyCodeRight) {
-        this.keyCodeRight = keyCodeRight;
+    public void setKeyCodeRight(char keyCodeRight) {
+        this.keyCodes[RIGHTBUTTONNUMBER] = Character.toLowerCase(keyCodeRight);
     }
 
-    public void setKeyCodeKick(char[] keyCodeKick) {
-        this.keyCodeKick = keyCodeKick;
+    public void setKeyCodeKick(char keyCodeKick) {
+        this.keyCodes[KICKBUTTONNUMBER] = Character.toLowerCase(keyCodeKick);
     }
 }

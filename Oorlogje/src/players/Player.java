@@ -2,33 +2,39 @@ package players;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import settings.DefaultSettings;
+import settings.PlayerSettings;
 import static windows.Window.settings;
 
 /**
  *
  * @author Bastiaan
  */
-public abstract class Player implements DefaultSettings {
-    
-    int SPEED = 5;
-    int HEIGHT = 100;
-    int WIDTH = 30;
-    int xPos = 0;
-    int yPos = 0;
-    
+public abstract class Player implements PlayerSettings {
+
+    int SPEED = DEFAULTSPEED;
+    int HEIGHT = DEFAULTHEIGHT;
+    int WIDTH = DEFAULTWIDTH;
+    int dx = ZERO;
+    int dy = ZERO;
+    int xPos = ZERO;
+    int yPos = ZERO;
+
     Image playerSprite;
-    
-    public Player () {
+
+    public Player() {
         playerSprite = PLAYERSPRITE;
     }
-    
-    public void move(java.awt.event.KeyEvent evt) {
-        if(evt.getKeyChar() == settings.getKeyCodeLeft()[1]) {
-            xPos -= 5;
-        } else if(evt.getKeyChar() == settings.getKeyCodeRight()[1]) {
-            yPos += 5;
-        }
+
+    public Player(Image playerSprite) {
+        this.playerSprite = playerSprite;
+    }
+
+    public void setDx(int dx) {
+        this.dx = dx;
+    }
+
+    public void setDy(int dy) {
+        this.dy = dy;
     }
 
     public int getWidth() {
@@ -39,16 +45,37 @@ public abstract class Player implements DefaultSettings {
         return HEIGHT;
     }
 
-    public void setWidth(int width) {
-        this.WIDTH = width;
+    public void setxPos(int xPos) {
+        this.xPos = xPos;
     }
 
-    public void setHeight(int height) {
-        this.HEIGHT = height;
+    public int getxPos() {
+        return xPos;
+    }
+
+    public int getyPos() {
+        return yPos;
+    }
+
+    public int getSPEED() {
+        return SPEED;
     }
     
-    public abstract void drawPlayer(Graphics g);
+    public void setyPos(int yPos) {
+        this.yPos = yPos;
+    }
+    /**
+     * Draws the player
+     * @param g 
+     */
+    public void drawPlayer(Graphics g) {
+        g.drawImage(playerSprite, xPos, yPos, null);
+    }
+
     public abstract void ability();
-    public abstract void update();
-    
+    /**
+     * Updates the position of the player
+     */
+    public abstract void updatePos();
+
 }

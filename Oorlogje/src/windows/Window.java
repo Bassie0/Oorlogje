@@ -22,8 +22,6 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
     public Window() {
         initComponents();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,7 +79,9 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
             }
         });
 
-        gamePanel.setPreferredSize(new java.awt.Dimension(930, 626));
+        gamePanel.setPreferredSize(new java.awt.Dimension(1152, 648));
+        gamePanel.setRequestFocusEnabled(false);
+        gamePanel.setVerifyInputWhenFocusTarget(false);
 
         javax.swing.GroupLayout gamePanelLayout = new javax.swing.GroupLayout(gamePanel);
         gamePanel.setLayout(gamePanelLayout);
@@ -91,7 +91,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         );
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
+            .addGap(0, 648, Short.MAX_VALUE)
         );
 
         optionsAI.setText("Bot opties");
@@ -105,7 +105,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
             }
         });
 
-        boat.setText("Boot");
+        boat.setText("Boat");
         boat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boatActionPerformed(evt);
@@ -114,7 +114,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
 
         controls.setText("Controls");
 
-        setWalkLeft.setText("a");
+        setWalkLeft.setText("A");
         setWalkLeft.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setWalkLeftActionPerformed(evt);
@@ -127,7 +127,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         });
         setWalkLeft.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
-        setWalkRight.setText("d");
+        setWalkRight.setText("D");
         setWalkRight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setWalkRightActionPerformed(evt);
@@ -140,7 +140,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         });
         setWalkRight.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
-        setPunch.setText("  space");
+        setPunch.setText("SPACE");
         setPunch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setPunchActionPerformed(evt);
@@ -153,7 +153,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         });
         setPunch.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
 
-        setKick.setText("enter");
+        setKick.setText("ENTER");
         setKick.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setKickActionPerformed(evt);
@@ -200,7 +200,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(1156, Short.MAX_VALUE)
+                        .addContainerGap(1158, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(walkRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -214,7 +214,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
                             .addComponent(setPunch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(setKick, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(gamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(gamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(boat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -243,7 +243,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(gamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
@@ -268,7 +268,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(setKick)
                             .addComponent(kick))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(mapOptions)
                         .addGap(11, 11, 11)
                         .addComponent(desert)
@@ -339,7 +339,13 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         // TODO add your handling code here:
-        thread.start();
+        if(!thread.isAlive()) {
+            thread.start();
+        }
+        game.setFocusable(true);
+        game.requestFocus();
+        game.addKeyListener(game);
+        game.addMouseListener(game);
     }//GEN-LAST:event_startActionPerformed
 
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
@@ -353,8 +359,8 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
     }//GEN-LAST:event_boatActionPerformed
     
     /**
-     * 
-     * @param button 
+     * Sets focus on the button
+     * @param button button to set focus on
      */
     void setFocus(javax.swing.JButton button) {
         button.setFocusable(true);
@@ -367,46 +373,40 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
      * @param evt 
      */
     void setKeybinding(javax.swing.JButton button, java.awt.event.KeyEvent evt) {
-        //KeyCodes
-        final int SPACE = 32;
-        final int TAB = 9;
-        final int ENTER = 10;
-        final int SHIFT = 16;
-        final int CTRL = 17;
-        final int ALT = 18;
         javax.swing.JButton buttonLeft = setWalkLeft;
         javax.swing.JButton buttonRight = setWalkRight;
         javax.swing.JButton buttonKick = setKick;
         javax.swing.JButton buttonPunch = setPunch;
         System.out.println(evt.getKeyCode());
         String keyTyped = Character.toString(evt.getKeyChar());
-        if(KeyEvent.CHAR_UNDEFINED == evt.getKeyChar() || SPACE == evt.getKeyCode() || ENTER == evt.getKeyCode()) {
+        if(KeyEvent.CHAR_UNDEFINED == evt.getKeyChar() || KeyEvent.VK_SPACE == evt.getKeyCode() || KeyEvent.VK_ENTER == evt.getKeyCode()) {
             switch(evt.getKeyCode()) {
-                case SPACE: keyTyped = "SPACE";
+                case KeyEvent.VK_SPACE: keyTyped = "SPACE";
                     break;
-                case TAB: keyTyped = "TAB";
+                case KeyEvent.VK_TAB: keyTyped = "TAB";
                     break;
-                case ENTER: keyTyped = "ENTER";
+                case KeyEvent.VK_ENTER: keyTyped = "ENTER";
                     break;
-                case SHIFT: keyTyped = "SHIFT";
+                case KeyEvent.VK_SHIFT: keyTyped = "SHIFT";
                     break;
-                case CTRL: keyTyped = "CTRL";
+                case KeyEvent.VK_CONTROL: keyTyped = "CTRL";
                     break;
-                case ALT: keyTyped = "ALT";
+                case KeyEvent.VK_ALT: keyTyped = "ALT";
                     break;
             }
         }
         if(buttonLeft.equals(button)) {
-            settings.setKeyCodeLeft(new char[]{LEFTBUTTONNUMBER, evt.getKeyChar()});
+            settings.setKeyCodeLeft(evt.getKeyChar());
         } else if(buttonRight.equals(button)) {
-            settings.setKeyCodeRight(new char[]{RIGHTBUTTONNUMBER, evt.getKeyChar()});
+            settings.setKeyCodeRight(evt.getKeyChar());
         } else if(buttonKick.equals(button)) {
-            settings.setKeyCodeKick(new char[]{KICKBUTTONNUMBER, evt.getKeyChar()});
+            settings.setKeyCodeKick(evt.getKeyChar());
         } else if(buttonPunch.equals(button)) {
-            settings.setKeyCodePunch(new char[]{PUNCHBUTTONNUMBER, evt.getKeyChar()});
+            settings.setKeyCodePunch(evt.getKeyChar());
         }
-        button.setText(keyTyped);
+        button.setText(keyTyped.toUpperCase());
         button.setFocusable(false);
+        button.requestFocus();
     }
     
     /**

@@ -46,7 +46,7 @@
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="1156" max="32767" attributes="0"/>
+                      <EmptySpace pref="1158" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="walkRight" max="32767" attributes="0"/>
@@ -64,7 +64,7 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="gamePanel" min="-2" pref="1152" max="-2" attributes="0"/>
+                      <Component id="gamePanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="boat" alignment="0" max="32767" attributes="0"/>
@@ -101,7 +101,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="gamePanel" max="32767" attributes="0"/>
+                      <Component id="gamePanel" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -131,7 +131,7 @@
                           <Component id="setKick" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="kick" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="mapOptions" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="desert" min="-2" max="-2" attributes="0"/>
@@ -173,11 +173,13 @@
     <Container class="javax.swing.JPanel" name="gamePanel">
       <Properties>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[930, 626]"/>
+          <Dimension value="[1152, 648]"/>
         </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+        <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="game;"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="game"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Window_gamePanel"/>
       </AuxValues>
 
@@ -189,7 +191,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="648" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -214,7 +216,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="boat">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Boot"/>
+        <Property name="text" type="java.lang.String" value="Boat"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boatActionPerformed"/>
@@ -227,7 +229,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="setWalkLeft">
       <Properties>
-        <Property name="text" type="java.lang.String" value="a"/>
+        <Property name="text" type="java.lang.String" value="A"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setWalkLeftActionPerformed"/>
@@ -239,7 +241,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="setWalkRight">
       <Properties>
-        <Property name="text" type="java.lang.String" value="d"/>
+        <Property name="text" type="java.lang.String" value="D"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setWalkRightActionPerformed"/>
@@ -251,7 +253,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="setPunch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="  space"/>
+        <Property name="text" type="java.lang.String" value="SPACE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setPunchActionPerformed"/>
@@ -263,7 +265,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="setKick">
       <Properties>
-        <Property name="text" type="java.lang.String" value="enter"/>
+        <Property name="text" type="java.lang.String" value="ENTER"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setKickActionPerformed"/>

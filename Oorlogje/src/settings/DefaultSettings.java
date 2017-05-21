@@ -14,13 +14,13 @@ import java.awt.Toolkit;
  */
 public interface DefaultSettings {
     Image MAP = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
-    Image PLAYERSPRITE = Toolkit.getDefaultToolkit().createImage(".\\poppetje.jpg");
+    int HEIGHT = 648;
+    int WIDTH = 1152;
     char KICKBUTTONNUMBER = 0;
     char PUNCHBUTTONNUMBER = 1;
     char LEFTBUTTONNUMBER = 2;
     char RIGHTBUTTONNUMBER = 3;
-    char[] KEYCODEKICK = {KICKBUTTONNUMBER,'w'};
-    char[] KEYCODEPUNCH = {PUNCHBUTTONNUMBER,'s'};
-    char[] KEYCODELEFT = {LEFTBUTTONNUMBER,'a'};
-    char[] KEYCODERIGHT = {RIGHTBUTTONNUMBER,'d'};
+    char[] KEYCODES = {' ', '\n', 'a', 'd'};
+    int UPDATEINTERVAL = 1000/60; // 1000 : 60
+    int FLOORHEIGHT = HEIGHT - 100;
 }

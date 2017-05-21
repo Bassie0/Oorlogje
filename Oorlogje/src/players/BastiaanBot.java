@@ -24,7 +24,7 @@ public class BastiaanBot extends Player {
     }
 
     @Override
-    public void update() {
+    public void updatePos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
