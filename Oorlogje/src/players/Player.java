@@ -3,7 +3,8 @@ package players;
 import java.awt.Graphics;
 import java.awt.Image;
 import settings.PlayerSettings;
-import static windows.Window.settings;
+import static windows.GamePanel.left;
+import static windows.GamePanel.right;
 
 /**
  *
@@ -17,7 +18,7 @@ public abstract class Player implements PlayerSettings {
     int dx = ZERO;
     int dy = ZERO;
     int xPos = ZERO;
-    int yPos = ZERO;
+    int yPos = FLOORHEIGHT;
 
     Image playerSprite;
 
@@ -29,8 +30,9 @@ public abstract class Player implements PlayerSettings {
         this.playerSprite = playerSprite;
     }
 
-    public void setDx(int dx) {
-        this.dx = dx;
+    public void setDx() {
+        
+        this.dx = (right - left) * SPEED;
     }
 
     public void setDy(int dy) {

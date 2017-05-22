@@ -18,7 +18,7 @@ import static windows.Window.settings;
  */
 public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSettings, KeyListener, MouseListener, PlayerSettings {
     
-    ArrayList<Player> players = new ArrayList<>();
+    Player[] players = new Player[2];
     //Game settings
     //ControlsS
     int WALKLEFT = 65;
@@ -27,20 +27,21 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
     int KICK = 13;
     //Difficulty
     int difficulty;
-    //Map
-    Image map = MAP;
+    //To track button presses
+    public static int left = 0;
+    public static int right = 0;
     /**
      * Creates new form GamePanel
      */
     public GamePanel() {
         initComponents();
-        players.add(new MilanBot());
+        players[0] = settings.getBot();
     }
     
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        g.drawImage(map, 0, 0, null);
+        g.drawImage(settings.getMap(), 0, 0, null);
         for(Player p : players) {
             p.drawPlayer(g);
         }
@@ -53,11 +54,11 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
     public void setMap(String map) {
         try {
             switch(map) {
-                case "City": this.map = Toolkit.getDefaultToolkit().createImage(".\\stadje.jpg");
+                case "City": settings.setMap(Toolkit.getDefaultToolkit().createImage(".\\stadje.jpg"));
                     break;
-                case "Boat": this.map = Toolkit.getDefaultToolkit().createImage(".\\boodt.jpg");
+                case "Boat": settings.setMap(Toolkit.getDefaultToolkit().createImage(".\\boodt.jpg"));
                     break;
-                case "Desert": this.map = Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg");
+                case "Desert": settings.setMap(Toolkit.getDefaultToolkit().createImage(".\\zandmapje.jpg"));
                     break;
             }
             System.out.println(map);
@@ -96,8 +97,8 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
         long previousUpdate = System.currentTimeMillis();
         while(true) {
             if(System.currentTimeMillis() - previousUpdate >= UPDATEINTERVAL) {
-                update();
                 previousUpdate = System.currentTimeMillis();
+                update();
             }
             this.repaint();
         }
@@ -110,20 +111,23 @@ public class GamePanel extends javax.swing.JPanel implements Runnable, DefaultSe
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println(players.get(0).getxPos());
         if (e.getKeyChar() == settings.getKeyCodeLeft()) {
-            players.get(0).setDx(players.get(0).getSPEED());
+            left = 1;
+            players[0].setDx();
         } else if (e.getKeyChar() == settings.getKeyCodeRight()) {
-            players.get(0).setDx(-players.get(0).getSPEED());
+            right = 1;
+            players[0].setDx();
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyChar() == settings.getKeyCodeLeft()) {
-            players.get(0).setDx(ZERO);
+            left = 0;
+            players[0].setDx();
         } else if (e.getKeyChar() == settings.getKeyCodeRight()) {
-            players.get(0).setDx(ZERO);
+            right = 0;
+            players[0].setDx();
         }
     }
 

@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.KeyStroke;
 import settings.DefaultSettings;
 import settings.Settings;
+import players.*;
 
 /**
  *
@@ -32,8 +33,7 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        whichBot = new javax.swing.ButtonGroup();
         multiplayer = new javax.swing.JButton();
         start = new javax.swing.JButton();
         gamePanel = game;
@@ -50,22 +50,11 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         walkRight = new javax.swing.JLabel();
         punch = new javax.swing.JLabel();
         kick = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        SSBotRButton = new javax.swing.JRadioButton();
+        bastiaanBotRButton = new javax.swing.JRadioButton();
+        milanBotRButton = new javax.swing.JRadioButton();
         city = new javax.swing.JButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        wahetOPRButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mortal Kombat XV");
@@ -174,14 +163,30 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
 
         kick.setText("Kick");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Super saiyan bot");
+        whichBot.add(SSBotRButton);
+        SSBotRButton.setSelected(true);
+        SSBotRButton.setText("Super saiyan bot");
+        SSBotRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SSBotRButtonActionPerformed(evt);
+            }
+        });
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Bastiaan bot");
+        whichBot.add(bastiaanBotRButton);
+        bastiaanBotRButton.setText("Bastiaan bot");
+        bastiaanBotRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bastiaanBotRButtonActionPerformed(evt);
+            }
+        });
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("Milan bot ");
+        whichBot.add(milanBotRButton);
+        milanBotRButton.setText("Milan bot ");
+        milanBotRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                milanBotRButtonActionPerformed(evt);
+            }
+        });
 
         city.setText("City");
         city.addActionListener(new java.awt.event.ActionListener() {
@@ -190,8 +195,13 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
             }
         });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Wahet op bot");
+        whichBot.add(wahetOPRButton);
+        wahetOPRButton.setText("Wahet op bot");
+        wahetOPRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wahetOPRButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,14 +231,14 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
                             .addComponent(multiplayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(desert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4)
+                            .addComponent(SSBotRButton)
+                            .addComponent(bastiaanBotRButton)
+                            .addComponent(milanBotRButton)
                             .addComponent(city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(mapOptions))
-                            .addComponent(jRadioButton2)
+                            .addComponent(wahetOPRButton)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(controls)
                                 .addGap(28, 28, 28))
@@ -279,13 +289,13 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
                         .addGap(40, 40, 40)
                         .addComponent(optionsAI, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1)
+                        .addComponent(SSBotRButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2)
+                        .addComponent(wahetOPRButton)
                         .addGap(3, 3, 3)
-                        .addComponent(jRadioButton3)
+                        .addComponent(bastiaanBotRButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton4)
+                        .addComponent(milanBotRButton)
                         .addGap(21, 21, 21))))
         );
 
@@ -357,6 +367,26 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         // TODO add your handling code here:
         game.setMap(boat.getText());
     }//GEN-LAST:event_boatActionPerformed
+
+    private void SSBotRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SSBotRButtonActionPerformed
+        // TODO add your handling code here:
+        settings.setBot(new SuperSaiyanBot());
+    }//GEN-LAST:event_SSBotRButtonActionPerformed
+
+    private void wahetOPRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wahetOPRButtonActionPerformed
+        // TODO add your handling code here:
+        settings.setBot(new WahetOPBot());
+    }//GEN-LAST:event_wahetOPRButtonActionPerformed
+
+    private void bastiaanBotRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bastiaanBotRButtonActionPerformed
+        // TODO add your handling code here:
+        settings.setBot(new BastiaanBot());
+    }//GEN-LAST:event_bastiaanBotRButtonActionPerformed
+
+    private void milanBotRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_milanBotRButtonActionPerformed
+        // TODO add your handling code here:
+        settings.setBot(new MilanBot());
+    }//GEN-LAST:event_milanBotRButtonActionPerformed
     
     /**
      * Sets focus on the button
@@ -408,15 +438,6 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
         button.setFocusable(false);
         button.requestFocus();
     }
-    
-    /**
-     * 
-     * @param button
-     * @param evt 
-     */
-    void checkKeybindings(javax.swing.JButton button, java.awt.event.KeyEvent evt) {
-        JButton[] buttonList = new javax.swing.JButton[] {setWalkLeft, setWalkRight, setPunch, setKick};
-    }
 
     /**
      * @param args the command line arguments
@@ -455,19 +476,16 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton SSBotRButton;
+    private javax.swing.JRadioButton bastiaanBotRButton;
     private javax.swing.JButton boat;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton city;
     private javax.swing.JLabel controls;
     private javax.swing.JButton desert;
     private javax.swing.JPanel gamePanel;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JLabel kick;
     private javax.swing.JLabel mapOptions;
+    private javax.swing.JRadioButton milanBotRButton;
     private javax.swing.JButton multiplayer;
     private javax.swing.JLabel optionsAI;
     private javax.swing.JLabel punch;
@@ -476,7 +494,9 @@ public class Window extends javax.swing.JFrame implements DefaultSettings {
     private javax.swing.JButton setWalkLeft;
     private javax.swing.JButton setWalkRight;
     private javax.swing.JButton start;
+    private javax.swing.JRadioButton wahetOPRButton;
     private javax.swing.JLabel walkLeft;
     private javax.swing.JLabel walkRight;
+    private javax.swing.ButtonGroup whichBot;
     // End of variables declaration//GEN-END:variables
 }

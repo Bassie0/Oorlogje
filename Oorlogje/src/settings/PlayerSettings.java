@@ -7,6 +7,9 @@ package settings;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import players.MilanBot;
+import players.Player;
+import static settings.DefaultSettings.HEIGHT;
 
 /**
  *
@@ -18,4 +21,6 @@ public interface PlayerSettings {
     int DEFAULTWIDTH = 30;
     int DEFAULTHEIGHT = 100;
     int ZERO = 0;
+    int FLOORHEIGHT = HEIGHT - 200;
+    Player DEFAULTBOT = new MilanBot();
 }

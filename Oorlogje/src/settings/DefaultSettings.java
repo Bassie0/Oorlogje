@@ -7,6 +7,7 @@ package settings;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import players.*;
 
 /**
  *
@@ -22,5 +23,4 @@ public interface DefaultSettings {
     char RIGHTBUTTONNUMBER = 3;
     char[] KEYCODES = {' ', '\n', 'a', 'd'};
     int UPDATEINTERVAL = 1000/60; // 1000 : 60
-    int FLOORHEIGHT = HEIGHT - 100;
 }
